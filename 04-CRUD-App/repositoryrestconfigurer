@@ -1,0 +1,9 @@
+@Component
+public class CustomizedRestMvcConfiguration extends RepositoryRestConfigurer {
+
+  @Override
+  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+    config.setBasePath("/api");
+  }
+}
+
