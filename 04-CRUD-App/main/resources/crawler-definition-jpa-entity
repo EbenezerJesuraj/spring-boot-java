@@ -15,4 +15,7 @@ public class CrawlerDefinition {
 
     private String FieldName4;
 
+	@OnetoMany(fetch = FetchType.LAZY) // Since, one crawler definition can have many crawlerdata entries..
+    @JoinColumn(name = "CrawlerID")
+
 }
