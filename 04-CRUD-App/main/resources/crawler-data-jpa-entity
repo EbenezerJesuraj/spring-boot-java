@@ -5,7 +5,7 @@ public class CrawlerData {
 	@GeneratedValue
 	private UUID ID;
 
-    private UUID CrawlerID;
+    private UUID CrawlerID; 	// foreign key mapping
 
 	private String ProductURL;
 

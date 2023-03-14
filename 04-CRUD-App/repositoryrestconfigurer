@@ -6,4 +6,3 @@ public class CustomizedRestMvcConfiguration extends RepositoryRestConfigurer {
     config.setBasePath("/api");
   }
 }
-
