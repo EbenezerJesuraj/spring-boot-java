@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-	private static final String template = "Hello, CRUDT REST-API Service with JPA-Hibernate is started and is running..%s!";
+	private static final String template = "Hello, Spring DATA REST CRUD REST-API Service with JPA-Hibernate is started and is running..%s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
