@@ -23,6 +23,12 @@ public class REST{
 		return builder.build();
 	}
 
+	/**
+	 * @param restTemplate
+	 * @return
+	 * @throws Exception
+	 */
+	
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
