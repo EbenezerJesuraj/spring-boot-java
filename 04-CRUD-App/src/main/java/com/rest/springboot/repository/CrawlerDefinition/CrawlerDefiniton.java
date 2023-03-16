@@ -4,7 +4,7 @@ import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CrawlerDefinitonRepository extends JpaRepository<CrawlerDefiniton, Long>{
+public interface CrawlerDefinitionRepository extends JpaRepository<CrawlerDefinition, Long>{
 
 }
 
