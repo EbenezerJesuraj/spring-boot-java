@@ -14,6 +14,10 @@ import main.java.com.rest.springboot.services.CRUD.LoggerFactory;
 @SpringBootApplication
 public class REST{
 
+	/**
+	 *
+	 */
+	private static final String HTTP_LOCALHOST_8080_API_SPRING_DATA_REST_CRUD = "http://localhost:8080/api/spring-data-rest-crud";
 	private static final Logger log = LoggerFactory.getLogger(REST.class);
 
 	public static void main(String[] args) {
@@ -35,7 +39,7 @@ public class REST{
 	public CommandLineRunner run(RestTemplate restTemplate)
 		return args -> {
 			Quote quote = restTemplate.getForObject(
-					"http://localhost:8080/api/spring-data-rest-crud", Quote.class);
+					HTTP_LOCALHOST_8080_API_SPRING_DATA_REST_CRUD, Quote.class);
 			log.info(quote.toString());
 		};
 	}

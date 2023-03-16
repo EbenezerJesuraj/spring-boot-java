@@ -3,10 +3,12 @@
 <groupId>com.example</groupId>
 <artifactId>myproject</artifactId>
 <version>0.0.1-SNAPSHOT</version>
+
 <parent>
 <groupId>org.springframework.boot</groupId>
 <artifactId>spring-boot-starter-parent</artifactId>
 <version>3.0.4</version>
 </parent>
+
 <!--  Additional lines to be added here...  -->
 </project>
