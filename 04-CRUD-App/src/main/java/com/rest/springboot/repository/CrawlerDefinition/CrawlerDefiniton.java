@@ -10,4 +10,7 @@ public interface CrawlerDefinitionRepository extends JpaRepository<CrawlerDefini
 
 }
 
+public static void main(String[] args){
+    
+}
 // Inversion of Control and Dependency Injection

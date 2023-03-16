@@ -12,6 +12,8 @@ public class CRUD {
     
     private static final Logger log = LoggerFactory.getLogger(CRUD.class);
 
+    
+
     public static void createCrawlerData(string[] args){
         CrawlerData CrawlerData;
         main.java.com.rest.springboot.services.CRUD.CrawlerData.ID = args[0];
@@ -120,6 +122,11 @@ public class CRUD {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CRUD.class, args);
+        system.out.println("1 - createCrawlerData")
+        system.out.println("2 - createCrawlerDefinition")
+        system.out.println("3 - readCrawlerData")
+        system.out.println("4 - readCrawlerDefinition")
+        system.out.println("5 - updateCrawlerData)
 	}
 
 

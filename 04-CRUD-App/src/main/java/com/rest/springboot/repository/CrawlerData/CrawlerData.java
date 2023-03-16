@@ -7,3 +7,7 @@ import org.springframework.stereotype.Repository;
 public interface CrawlerDataRepository extends JpaRepository<CrawlerData, Long>{
 
 }
+
+public static void main(String[] args){
+    
+}
