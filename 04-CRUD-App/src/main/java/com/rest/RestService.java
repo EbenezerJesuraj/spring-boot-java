@@ -1,4 +1,4 @@
-package com.rest.services.CRUD;
+package com.rest.
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -7,6 +7,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import main.java.com.rest.springboot.services.CRUD;
 import main.java.com.rest.springboot.services.CRUD.Logger;
 import main.java.com.rest.springboot.services.CRUD.LoggerFactory;
 
@@ -16,7 +17,6 @@ public class REST{
 	private static final Logger log = LoggerFactory.getLogger(REST.class);
 
 	public static void main(String[] args) {
-		//SpringApplication.run(REST.class, args);
 		SpringApplication.run(CRUD.class, args);
 	}
 
@@ -32,7 +32,7 @@ public class REST{
 	 */
 	
 	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+	public CommandLineRunner run(RestTemplate restTemplate)
 		return args -> {
 			Quote quote = restTemplate.getForObject(
 					"http://localhost:8080/api/spring-data-rest-crud", Quote.class);

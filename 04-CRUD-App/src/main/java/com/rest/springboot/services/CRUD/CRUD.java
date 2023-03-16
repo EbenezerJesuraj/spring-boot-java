@@ -23,6 +23,9 @@ public class CRUD {
         main.java.com.rest.springboot.services.CRUD.CrawlerData.Value4 = args[6];
     }
 
+    /**
+     * @return
+     */
     public static CrawlerData readCrawlerData(){
         CrawlerData CrawlerDataResponse;
         CrawlerDataResponse.ID = CrawlerData.ID;
@@ -33,8 +36,7 @@ public class CRUD {
         CrawlerDataResponse.Value3 = CrawlerData.Value3;
         CrawlerDataResponse.Value4 = CrawlerData.Value4;
         
-
-
+        return CrawlerDataResponse;
 
     }
     public static void updateCrawlerData(string[] args){
@@ -63,7 +65,7 @@ public class CRUD {
             main.java.com.rest.springboot.services.CRUD.CrawlerData.Value4 = null;
         }
         else
-            System.out.println("No Crawler foudn for the given ID");
+            System.out.println("No Crawler found for the given ID");
        
     }
 	public static void main(String[] args) {
