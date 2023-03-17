@@ -21,29 +21,32 @@ public class CRUD {
      
     */
 
-    
+    CrawlerData CrawlerData = null;
+    CrawlerDefinition CrawlerDefinition;
+
     public static void createCrawlerData(String[] strings){
         
         System.out.println("The application has entered into the createCrawlerData stage");
-        CrawlerData CrawlerData;
-        com.springboot.services.CRUD.CrawlerData.ID = strings[0];
-        com.springboot.services.CRUD.CrawlerData.CrawlerID = null;
-        com.springboot.services.CRUD.CrawlerData.ProductURL = null;
-        com.springboot.services.CRUD.CrawlerData.Value1 = null;
-        com.springboot.services.CRUD.CrawlerData.Value2 = null;
-        com.springboot.services.CRUD.CrawlerData.Value3 = null;
-        com.springboot.services.CRUD.CrawlerData.Value4 = null;
+        
+        com.springboot.services.CRUD.CrawlerData.ID = strings[1];
+        com.springboot.services.CRUD.CrawlerData.CrawlerID = strings[2];
+        com.springboot.services.CRUD.CrawlerData.ProductURL = strings[3];
+        com.springboot.services.CRUD.CrawlerData.Value1 = strings[4];
+        com.springboot.services.CRUD.CrawlerData.Value2 = strings[5];
+        com.springboot.services.CRUD.CrawlerData.Value3 = strings[6];
+        com.springboot.services.CRUD.CrawlerData.Value4 = strings[7];
     }
     
-    public static void createCrawlerDefinition(string[] strings){
+    public static void createCrawlerDefinition(String[] args){
+    
         System.out.println("The application has entered into the createCrawlerDefinition stage");
-        CrawlerDefinition CrawlerDefinition;
-        com.springboot.services.CRUD.CrawlerDefinition.ID = strings[0];
-        com.springboot.services.CRUD.CrawlerDefinition.Sitename = null;
-        com.springboot.services.CRUD.CrawlerDefinition.FieldName1 = strings[2];
-        com.springboot.services.CRUD.CrawlerDefinition.FieldName2 = strings[3];
-        com.springboot.services.CRUD.CrawlerDefinition.FieldName3 = strings[4];
-        com.springboot.services.CRUD.CrawlerDefinition.FieldName4 = strings[5];
+    
+        com.springboot.services.CRUD.CrawlerDefinition.ID = args[1];
+        com.springboot.services.CRUD.CrawlerDefinition.Sitename = args[2];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName1 = args[3];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName2 = args[4];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName3 = args[5];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName4 = args[6];
     }
    
     //public static CrawlerData readCrawlerData(){
@@ -51,13 +54,13 @@ public class CRUD {
             System.out.println("The application has entered into readCrawler function: ");
         
         CrawlerData CrawlerDataResponse = new CrawlerData();
-        System.out.printf("ID: ", CrawlerDataResponse.ID);
-        System.out.printf("CrawlerID: " ,CrawlerDataResponse.CrawlerID);
-        System.out.printf("ProductURL: " , CrawlerDataResponse.ProductURL);
-        System.out.printf("Value 1: " , CrawlerDataResponse.Value1);
-        System.out.printf("Value 2: " , CrawlerDataResponse.Value2);
-        System.out.printf("Value 3: " , CrawlerDataResponse.Value3);
-        System.out.printf("Value 4: " , CrawlerDataResponse.Value4);
+        System.out.printf("ID: ", com.springboot.services.CRUD.CrawlerData.ID);
+        System.out.printf("CrawlerID: " ,com.springboot.services.CRUD.CrawlerData.CrawlerID);
+        System.out.printf("ProductURL: " , com.springboot.services.CRUD.CrawlerData.ProductURL);
+        System.out.printf("Value 1: " , com.springboot.services.CRUD.CrawlerData.Value1);
+        System.out.printf("Value 2: " , com.springboot.services.CRUD.CrawlerData.Value2);
+        System.out.printf("Value 3: " , com.springboot.services.CRUD.CrawlerData.Value3);
+        System.out.printf("Value 4: " , com.springboot.services.CRUD.CrawlerData.Value4);
         
 
     }
@@ -74,7 +77,7 @@ public class CRUD {
         return CrawlerDefinitionResponse;
 
     }
-
+    
     public static void updateCrawlerData(string[] strings){
         main.java.com.springboot.services.CRUD.CrawlerData.ID = strings[0];
         main.java.com.springboot.services.CRUD.CrawlerData.CrawlerID = strings[1];

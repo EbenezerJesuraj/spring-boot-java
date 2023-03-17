@@ -31,31 +31,31 @@ public class main {
         System.out.println("4 - readCrawlerDefinition");
         System.out.println("5 - updateCrawlerData");
         CRUD obj = new CRUD();
+
         /* 
-        Scanner myObj = new Scanner(System.in);
-        String userInput;
-    
-        System.out.println("Enter the number"); 
-        userInput = myObj.nextLine();   
-        System.out.println("Num is: " + userInput); 
-        args[9] = userInput;
+        args[1] = "10002";
+        args[2] = "10001";
+        args[3] = "tulip";
+        args[4] = "A1234568";
+        args[5] = "A1234569";
+        args[6] = "A1234560";
+        args[7] = "A1234561";
+        */
+        CRUD.readCrawlerData();
+        //CRUD.createCrawlerData(args);
+        CRUD.readCrawlerData();
+
+        /* 
+        args[1] = "10001";
+        args[2] = "bacardi";
+        args[3] = "E1234567";
+        args[4] = "E1234568";
+        args[5] = "E1234569";
+        args[6] = "E1234560";
+        */
+
+        //CRUD.createCrawlerDefinition(args);
         
-        if(args[9] == "1"){
-
-            Scanner id = new Scanner(System.in);
-            System.out.println("Enter ID: ");
-            // getting user input's breaks the running of the program..
-            userInput = myObj.nextLine();   
-            System.out.println("ID is:" +userInput);
-            args=null;
-            args[0] = userInput;
-            */
-            CRUD.createCrawlerData(args);
-
         }
-        //args[9]=3;
         
-        
-        //CRUD.readCrawlerData();
-        //SpringApplication.run(CRUD.class, args); //Linking Rest-Service to the Test Application runner..
     }
