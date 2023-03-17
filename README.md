@@ -8,3 +8,5 @@ Branch Cycle:
 Whenever a feature is being developed one should follow the below cycle in this branch..
 
 Develop->Debug->Main branch
+
+Note: The current main branch is severly out-dated
