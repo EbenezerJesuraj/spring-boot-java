@@ -1,0 +1,32 @@
+@Configuration
+class CustomRestMvcConfiguration {
+
+  @Bean
+  public RepositoryRestConfigurer repositoryRestConfigurer() {
+
+    return new RepositoryRestConfigurer() {
+
+      @Override
+      public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+        config.setBasePath("/api");
+      }
+    };
+  }
+}
+
+@Configuration
+class CustomRestMvcConfiguration {
+
+  @Bean
+  public RepositoryRestConfigurer repositoryRestConfigurer() {
+
+    return new RepositoryRestConfigurer() {
+
+      @Override
+      public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+        config.setBasePath("/api");
+      }
+    };
+  }
+}
+

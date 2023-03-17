@@ -7,4 +7,4 @@
  * in the user manual at https://docs.gradle.org/8.0.2/userguide/multi_project_builds.html
  */
 
-rootProject.name = '04-CRUD-App'
+rootProject.name = '02-Second-Project-Hello-World'
