@@ -4,10 +4,7 @@ package com.springboot.services.CRUD;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.springboot.main;
 
 //import org.springboot.entity.CrawlerDataJPAEntity;
 
@@ -17,8 +14,8 @@ public class CRUD {
     private static final Logger log = LoggerFactory.getLogger(CRUD.class);
 
     /* 
-    public static void main(String[] args) {
-		//SpringApplication.run(CRUD.class, args);
+    public static void main(String[] strings) {
+		//SpringApplication.run(CRUD.class, strings);
        
 	}
      
@@ -37,17 +34,18 @@ public class CRUD {
         com.springboot.services.CRUD.CrawlerData.Value3 = null;
         com.springboot.services.CRUD.CrawlerData.Value4 = null;
     }
-    /*
-    public static void createCrawlerDefinition(string[] args){
+    
+    public static void createCrawlerDefinition(string[] strings){
+        System.out.println("The application has entered into the createCrawlerDefinition stage");
         CrawlerDefinition CrawlerDefinition;
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.ID = args[0];
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.Sitename = args[1];
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.FieldName1 = args[2];
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.FieldName2 = args[3];
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.FieldName3 = args[4];
-        main.java.com.springboot.services.CRUD.CrawlerDefinition.FieldName4 = args[5];
+        com.springboot.services.CRUD.CrawlerDefinition.ID = strings[0];
+        com.springboot.services.CRUD.CrawlerDefinition.Sitename = null;
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName1 = strings[2];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName2 = strings[3];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName3 = strings[4];
+        com.springboot.services.CRUD.CrawlerDefinition.FieldName4 = strings[5];
     }
-   */
+   
     //public static CrawlerData readCrawlerData(){
         public static void readCrawlerData(){
             System.out.println("The application has entered into readCrawler function: ");
@@ -77,23 +75,23 @@ public class CRUD {
 
     }
 
-    public static void updateCrawlerData(string[] args){
-        main.java.com.springboot.services.CRUD.CrawlerData.ID = args[0];
-        main.java.com.springboot.services.CRUD.CrawlerData.CrawlerID = args[1];
-        main.java.com.springboot.services.CRUD.CrawlerData.ProductURL = args[2];
-        main.java.com.springboot.services.CRUD.CrawlerData.Value1 = args[3];
-        main.java.com.springboot.services.CRUD.CrawlerData.Value2 = args[4];
-        main.java.com.springboot.services.CRUD.CrawlerData.Value3 = args[5];
-        main.java.com.springboot.services.CRUD.CrawlerData.Value4 = args[6];
+    public static void updateCrawlerData(string[] strings){
+        main.java.com.springboot.services.CRUD.CrawlerData.ID = strings[0];
+        main.java.com.springboot.services.CRUD.CrawlerData.CrawlerID = strings[1];
+        main.java.com.springboot.services.CRUD.CrawlerData.ProductURL = strings[2];
+        main.java.com.springboot.services.CRUD.CrawlerData.Value1 = strings[3];
+        main.java.com.springboot.services.CRUD.CrawlerData.Value2 = strings[4];
+        main.java.com.springboot.services.CRUD.CrawlerData.Value3 = strings[5];
+        main.java.com.springboot.services.CRUD.CrawlerData.Value4 = strings[6];
     }
 
-    public static void updateCrawlerDefinition(string[] args){
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.ID = args[0];
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.Sitename args[1];
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName1= args[2];
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName2 = args[3];
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName3 = args[4];
-        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName4 = args[5];
+    public static void updateCrawlerDefinition(string[] strings){
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.ID = strings[0];
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.Sitename strings[1];
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName1= strings[2];
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName2 = strings[3];
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName3 = strings[4];
+        main.java.com.rest.springboot.services.CRUD.CrawlerDefinition.FieldName4 = strings[5];
     }
    
     public static void deleteCrawlerData(string ID){
