@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "userinput",
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"crudapp",
+			"Sitename",
+			"springboot"
+		],
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
