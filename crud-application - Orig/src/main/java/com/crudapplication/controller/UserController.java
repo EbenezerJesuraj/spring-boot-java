@@ -1,8 +1,11 @@
-package com.crudtutorial.controller;
+package com.crudapplication.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;  
+import org.springframework.web.bind.annotation.RestController;  
 
 import lombok.AllArgsConstructor;
-import com.crudtutorial.entity.User;
-import com.crudtutorial.service.UserService;
+import com.crudapplication.entity.User;
+import com.crudapplication.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -10,14 +13,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/* 
+@RestController  
+public class CrudApplicationController { 
+@RequestMapping("/")  
+public String hello()   
+    {  
+        return "Hello User";  
+    }
+*/
+
+
+
 @AllArgsConstructor
 
 @RestController 
-@RequestMapping("/")
+@RequestMapping("/start")
 public class UserController {
 
     private UserService userService;
-
+    
+      
     // build create User REST API
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
@@ -48,6 +64,7 @@ public class UserController {
     // http://localhost:8080/api/users/1
     public ResponseEntity<User> updateUser(@PathVariable("id") Long userId,
                                            @RequestBody User user){
+        
         user.setId(userId);
         User updatedUser = userService.updateUser(user);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);

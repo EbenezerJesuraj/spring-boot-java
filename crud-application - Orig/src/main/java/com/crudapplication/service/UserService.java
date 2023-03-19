@@ -1,6 +1,6 @@
-package com.crudtutorial.service;
+package com.crudapplication.service;
 
-import com.crudtutorial.entity.User;
+import com.crudapplication.entity.User;
   
 import java.util.List;
 

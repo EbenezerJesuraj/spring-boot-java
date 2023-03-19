@@ -1,15 +1,11 @@
-package com.crudtutorial.service.impl;
+package com.crudapplication.service.Impl;
 
 import lombok.AllArgsConstructor;
-import net.javaguides.springboot.entity.User;
-import net.javaguides.springboot.repository.UserRepository;
-import net.javaguides.springboot.service.UserService;
-import org.apache.logging.log4j.util.Strings;
+import com.crudapplication.entity.User;
+import com.crudapplication.repository.UserRepository;
+import com.crudapplication.service.UserService;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -20,11 +16,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
+        System.out.println("Inside of creates user");
         return userRepository.save(user);
     }
 
     @Override
     public User getUserById(Long userId) {
+        System.out.println("Inside of get user by ID");
         Optional<User> optionalUser = userRepository.findById(userId);
         return optionalUser.get();
     }
@@ -45,12 +43,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void setId(Long userId) {
-        userRepository.userRepository.setId(userId);
-    }
-    
-    @Override
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public User setId(Long userId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setId'");
     }
 }

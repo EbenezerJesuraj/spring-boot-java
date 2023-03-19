@@ -1,6 +1,11 @@
-package main.java.com.crudtutorial.entity;
+package com.crudapplication.entity;
 
-import jakarta.persistence.*;
+
+
+
+//import jakarta.persistence.*;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
-
+@Table(name = "crud1")
+public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
