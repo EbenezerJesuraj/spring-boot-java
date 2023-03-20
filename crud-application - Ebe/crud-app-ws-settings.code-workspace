@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "../crud-tutorial"
+		},
+		{
+			"name": "crud-application",
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"cSpell.words": [
+			"crawlerdata",
+			"crawlerdefinition",
+			"crudapplication",
+			"Oneto"
+		]
+	}
+}

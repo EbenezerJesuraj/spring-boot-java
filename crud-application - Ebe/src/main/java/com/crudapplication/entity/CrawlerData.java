@@ -1,0 +1,55 @@
+package com.crudapplication.entity;
+import java.util.UUID;
+
+//import jakarta.persistence.*;
+import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Entity
+@Table(name = "crawlerdata")
+public class CrawlerData {
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private UUID ID;
+	@Column(nullable = false, unique = true)
+    private UUID CrawlerID; 	// foreign key mapping
+	@Column(nullable = false, unique = true)
+	private String ProductURL;
+	@Column(nullable = false)
+	private String Value1;
+	@Column(nullable = false)
+    private String Value2;
+	@Column(nullable = false)
+    private String Value3;
+	@Column(nullable = false)
+    private String Value4;
+	public Long getId() {
+		return null;
+	}
+    public Object getFirstName() {
+        return null;
+    }
+    public Object getLastName() {
+        return null;
+    }
+    public Object getEmail() {
+        return null;
+    }
+    public void setFirstName(Object firstName) {
+    }
+    public void setLastName(Object lastName) {
+    }
+    public void setEmail(Object email) {
+    }
+	@Column(nullable = false)
+}
