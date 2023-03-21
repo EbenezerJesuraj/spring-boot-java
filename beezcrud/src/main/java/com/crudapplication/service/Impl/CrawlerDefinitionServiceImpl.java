@@ -4,8 +4,13 @@ import lombok.AllArgsConstructor;
 
 //import com.crudapplication.controller.CrawlerDefinitionController;
 import com.crudapplication.entity.CrawlerDefinition;
+import com.crudapplication.repository.CrawlerDefinitionPagingRepository;
 import com.crudapplication.repository.CrawlerDefinitionRepository;
 import com.crudapplication.service.CrawlerDefinitionService;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +20,7 @@ import java.util.Optional;
 public class CrawlerDefinitionServiceImpl implements CrawlerDefinitionService {
 
     private CrawlerDefinitionRepository crawlerDefinitionRepository;
+    private CrawlerDefinitionPagingRepository crawlerDefinitionPagingRepository;
 
     @Override
     public CrawlerDefinition createCrawlerDefinition(CrawlerDefinition CrawlerDefinition) {
@@ -29,9 +35,28 @@ public class CrawlerDefinitionServiceImpl implements CrawlerDefinitionService {
         return optionalCrawlerDefinition.get();
     }
 
+    /* 
     @Override
     public List<CrawlerDefinition> getAllCrawlerDefinitions() {
         return crawlerDefinitionRepository.findAll();
+    }
+    */
+
+    @Override
+    public List<CrawlerDefinition> getAllCrawlerDefinitions(Integer pageNo,Integer pageSize){
+        
+        PageRequest paging = PageRequest.of(pageNo, pageSize);
+        Page<CrawlerDefinition> pagedResult = crawlerDefinitionPagingRepository.findAll(paging);
+        Page<CrawlerDefinition> sortedbyId = (Page<CrawlerDefinition>) crawlerDefinitionPagingRepository.findAll(Sort.by("id"));  //added sorting but needs to be checked..
+        //Pageable sortedByIdAscendingPageable = PageRequest.of(pageNo, pageSize);
+        
+        //pagedResult = (Page<CrawlerData>)pagedResult.getSort(); Sorting is still pending..
+        
+        if(sortedbyId.hasContent())
+            return sortedbyId.getContent();
+        return pagedResult.getContent();
+
+        //return crawlerDataRepository.findAll();
     }
 
 
