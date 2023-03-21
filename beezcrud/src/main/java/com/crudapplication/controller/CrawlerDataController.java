@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
-
+import java.lang.Integer;
 import java.util.List;
 
 @AllArgsConstructor
@@ -58,9 +58,9 @@ public class CrawlerDataController {
     //@RequestMapping("/get")
     @GetMapping
     public ResponseEntity<List<CrawlerData>> getAllCrawlerData(@RequestParam(defaultValue = "0") Integer pageNo,
-    @RequestParam(defaultValue = "10") Integer pageSize,
-    @RequestParam(defaultValue = "id") String sortBy){
-        
+    @RequestParam(defaultValue = "10") Integer pageSize)
+    //@RequestParam(defaultValue = "id") String sortBy)
+    {
         
         // The above request parameters must be added in the args section of getAllCrawlerData to allow paging support
         System.out.println("Inside of GetMapping");

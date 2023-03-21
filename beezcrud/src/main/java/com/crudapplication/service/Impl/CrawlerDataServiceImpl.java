@@ -5,9 +5,11 @@ import lombok.AllArgsConstructor;
 //import com.crudapplication.controller.CrawlerDataController;
 import com.crudapplication.entity.CrawlerData;
 import com.crudapplication.repository.CrawlerDataRepository;
+import com.crudapplication.repository.CrawlerDataPagingRepository;
 import com.crudapplication.service.CrawlerDataService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ import java.lang.Integer;
 public class CrawlerDataServiceImpl implements CrawlerDataService {
 
     private CrawlerDataRepository crawlerDataRepository;
+    private CrawlerDataPagingRepository crawlerDataPagingRepository;
 
     @Override
     public CrawlerData createCrawlerData(CrawlerData crawlerData) {
@@ -40,11 +43,12 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
         return crawlerDataRepository.findAll();
     }
     */
-    @Autowired
+    //@Autowired
+    @Override
     public List<CrawlerData> getAllCrawlerData(Integer pageNo,Integer pageSize){
         
         PageRequest paging = PageRequest.of(pageNo, pageSize);
-        Page<CrawlerData> pagedResult = crawlerDataRepository.findAll(paging);
+        Page<CrawlerData> pagedResult = crawlerDataPagingRepository.findAll(paging);
 
         
         if(pagedResult.hasContent())
