@@ -42,6 +42,7 @@ public class CrawlerDefinitionController {
         return new ResponseEntity<>(crawlerDefinition, HttpStatus.OK);
     }
 
+    /*
     // Build Get All CrawlerDefinitions REST API
     // http://localhost:8080/api/CrawlerDefinitions
     //@RequestMapping("/get")
@@ -50,6 +51,20 @@ public class CrawlerDefinitionController {
         List<CrawlerDefinition> crawlerDefinitions = crawlerDefinitionService.getAllCrawlerDefinitions();
     
         return new ResponseEntity<>(crawlerDefinitions, HttpStatus.OK);
+    }
+    */
+
+    @GetMapping
+    public ResponseEntity<List<CrawlerDefinition>> getAllCrawlerDefinition(@RequestParam(defaultValue = "0") Integer pageNo,
+    @RequestParam(defaultValue = "10") Integer pageSize)
+    //@RequestParam(defaultValue = "id") String sortBy)
+    {
+        
+        // The above request parameters must be added in the args section of getAllCrawlerData to allow paging support
+        System.out.println("Inside of GetMapping");
+        //List<CrawlerData> crawlerData = crawlerDataService.getAllCrawlerData();
+        List<CrawlerDefinition>crawlerDefinition = crawlerDefinitionService.getAllCrawlerDefinitions(pageNo, pageSize);
+        return new ResponseEntity<>(crawlerDefinition, HttpStatus.OK);
     }
 
     // Build Update CrawlerDefinition REST API
