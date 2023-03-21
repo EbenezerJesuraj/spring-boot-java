@@ -1,6 +1,7 @@
 package com.crudapplication.service.Impl;
 
 import lombok.AllArgsConstructor;
+import net.bytebuddy.asm.Advice.OffsetMapping.Sort;
 
 //import com.crudapplication.controller.CrawlerDataController;
 import com.crudapplication.entity.CrawlerData;
@@ -8,7 +9,6 @@ import com.crudapplication.repository.CrawlerDataRepository;
 import com.crudapplication.repository.CrawlerDataPagingRepository;
 import com.crudapplication.service.CrawlerDataService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -49,7 +49,10 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
         
         PageRequest paging = PageRequest.of(pageNo, pageSize);
         Page<CrawlerData> pagedResult = crawlerDataPagingRepository.findAll(paging);
-
+        //Pageable sortedbyId = crawlerDataPagingRepository.findAll(Sort.by("name"));  //added sorting but needs to be checked..
+        //Pageable sortedByIdAscendingPageable = PageRequest.of(pageNo, pageSize);
+        
+        //pagedResult = (Page<CrawlerData>)pagedResult.getSort(); Sorting is still pending..
         
         if(pagedResult.hasContent())
             return pagedResult.getContent();
