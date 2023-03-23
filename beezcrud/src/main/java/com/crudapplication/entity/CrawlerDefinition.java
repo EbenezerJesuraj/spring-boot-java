@@ -35,24 +35,6 @@ public class CrawlerDefinition {
     private String fieldName4;
 }
 
-/*
-public class CrawlerDefinition {
-
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
-	@Column(nullable = false)
-	private String Sitename;
-	@Column(nullable = false)
-	private String FieldName1;
-	@Column(nullable = false)
-    private String FieldName2;
-	@Column(nullable = false)
-    private String FieldName3;
-	@Column(nullable = false)
-    private String FieldName4;
-}
-*/
 
 	//@OnetoMany(fetch = FetchType.LAZY) // Since, one crawler definition can have many crawlerdata entries..
     //@JoinColumn(name = "CrawlerID")

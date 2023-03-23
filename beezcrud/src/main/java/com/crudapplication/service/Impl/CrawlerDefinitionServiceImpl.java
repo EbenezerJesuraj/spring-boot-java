@@ -10,6 +10,7 @@ import com.crudapplication.service.CrawlerDefinitionService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -45,16 +46,26 @@ public class CrawlerDefinitionServiceImpl implements CrawlerDefinitionService {
     @Override
     public List<CrawlerDefinition> getAllCrawlerDefinitions(Integer pageNo,Integer pageSize){
         
-        PageRequest paging = PageRequest.of(pageNo, pageSize);
-        Page<CrawlerDefinition> pagedResult = crawlerDefinitionPagingRepository.findAll(paging);
-        Page<CrawlerDefinition> sortedbyId = (Page<CrawlerDefinition>) crawlerDefinitionPagingRepository.findAll(Sort.by("id"));  //added sorting but needs to be checked..
+        String sortBy = "id";
+        String sortDir = "ASC";
+
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+
+        
+        // create Pageable instance
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+
+        Page<CrawlerDefinition> pagedResult = crawlerDefinitionPagingRepository.findAll(pageable);
+        //Pageable paging = PageRequest.of(pageNo, pageSize);
+        //Page<CrawlerDefinition> pagedResult = crawlerDefinitionPagingRepository.findAll(paging);
+        //Page<CrawlerDefinition> sortedbyId = (Page<CrawlerDefinition>) crawlerDefinitionPagingRepository.findAll(Sort.by("id"));  //added sorting but needs to be checked..
         //Pageable sortedByIdAscendingPageable = PageRequest.of(pageNo, pageSize);
         
         //pagedResult = (Page<CrawlerData>)pagedResult.getSort(); Sorting is still pending..
         
-        if(sortedbyId.hasContent())
-            return sortedbyId.getContent();
-        return pagedResult.getContent();
+        if(pagedResult.hasContent())
+            return pagedResult.getContent();
+        return null;
 
         //return crawlerDataRepository.findAll();
     }
