@@ -15,7 +15,6 @@ import lombok.Setter;
 @AllArgsConstructor
 
 
-
 @Entity
 @Table(name = "crawlerdefinition")
 public class CrawlerDefinition {
@@ -36,13 +35,11 @@ public class CrawlerDefinition {
 }
 
 
-	//@OnetoMany(fetch = FetchType.LAZY) // Since, one crawler definition can have many crawlerdata entries..
-    //
+	// Foreign Key Mapping has been temporarily disabled due to issues with getter setter functions..
 
 	//@OnetoMany
 	//private CrawlerData crawlerData;
-	@JoinColumn(name = "CrawlerId")
+	//@JoinColumn(name = "CrawlerId")
     
 	
-
 	//public static final QUser crawlerDefinition = new QUser("crawlerDefinition")
