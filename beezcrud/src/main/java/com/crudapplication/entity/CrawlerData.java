@@ -34,6 +34,7 @@ public class CrawlerData {
     private String value3;
 	@Column(nullable = false)
     private String value4;
-	
 
 }
+
+//public static final QUser crawlerdata = new QUser("crawlerData");

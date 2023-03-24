@@ -1,0 +1,37 @@
+// Simple Querying and Filtering for crawlerData
+
+EntityManagerFactory emf = 
+  Persistence.createEntityManagerFactory("com.baeldung.querydsl.intro");
+EntityManager em = entityManagerFactory.createEntityManager();
+JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+
+QUser crawlerData = QUser.crawlerdata;
+
+crawlerData c = queryFactory.selectFrom(crawlerData)
+  .where(crawlerData.login.eq("user"))
+  .fetchOne();
+
+// Ordering for crawlerData
+
+List<crawlerData> c = queryFactory.selectFrom(crawlerData)
+  .orderBy(crawlerData.login.asc())
+  .fetch();
+
+// Simple Querying and Filtering for crawlerDefinition
+
+EntityManagerFactory emf = 
+Persistence.createEntityManagerFactory("com.baeldung.querydsl.intro");
+EntityManager em = entityManagerFactory.createEntityManager();
+JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+
+QUser crawlerDefinition QUser.crawlerdefinition
+
+crawlerDefinition c = queryFactory.selectFrom(crawlerDefinition)
+.where(crawlerDefinition.login.eq("user"))
+.fetchOne();
+
+// Ordering for crawlerDefinition
+
+List<crawlerDefinition> c = queryFactory.selectFrom(crawlerDefinition)
+.orderBy(crawlerDefinition.login.asc())
+.fetch();

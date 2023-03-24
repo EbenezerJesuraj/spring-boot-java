@@ -37,5 +37,12 @@ public class CrawlerDefinition {
 
 
 	//@OnetoMany(fetch = FetchType.LAZY) // Since, one crawler definition can have many crawlerdata entries..
-    //@JoinColumn(name = "CrawlerID")
+    //
 
+	//@OnetoMany
+	//private CrawlerData crawlerData;
+	@JoinColumn(name = "CrawlerId")
+    
+	
+
+	//public static final QUser crawlerDefinition = new QUser("crawlerDefinition")
