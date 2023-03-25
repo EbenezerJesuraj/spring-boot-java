@@ -9,4 +9,8 @@ Whenever a feature is being developed one should follow the below cycle in this 
 
 Develop->Debug->Main branch
 
-Note: The current main branch is severly out-dated
+Note: 
+
+1) The current main branch is severly out-dated
+
+2) A clean-up of the repository contents and it's branches are still in progress and will be updated via a future commit to maintian orderliness..
