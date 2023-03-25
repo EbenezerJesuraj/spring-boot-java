@@ -1,20 +1,26 @@
 package com.crudapplication.service.Impl;
 
 import lombok.AllArgsConstructor;
-
 //import com.crudapplication.controller.CrawlerDataController;
 import com.crudapplication.entity.CrawlerData;
 import com.crudapplication.repository.CrawlerDataRepository;
+import com.crudapplication.repository.CrawlerDataPagingRepository;
 import com.crudapplication.service.CrawlerDataService;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.lang.Integer;
 
 @Service
 @AllArgsConstructor
 public class CrawlerDataServiceImpl implements CrawlerDataService {
 
     private CrawlerDataRepository crawlerDataRepository;
+    private CrawlerDataPagingRepository crawlerDataPagingRepository;
 
     @Override
     public CrawlerData createCrawlerData(CrawlerData crawlerData) {
@@ -29,11 +35,30 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
         return optionalCrawlerData.get();
     }
 
+    /*
     @Override
     public List<CrawlerData> getAllCrawlerData() {
         return crawlerDataRepository.findAll();
     }
+    */
+    //@Autowired
+    @Override
+    public List<CrawlerData> getAllCrawlerData(Integer pageNo,Integer pageSize){
+        
+        PageRequest paging = PageRequest.of(pageNo, pageSize);
+        Page<CrawlerData> pagedResult = crawlerDataPagingRepository.findAll(paging);
+        Page<CrawlerData> sortedbyId = (Page<CrawlerData>) crawlerDataPagingRepository.findAll(Sort.by("id"));  //added sorting but needs to be checked..
+        //Pageable sortedByIdAscendingPageable = PageRequest.of(pageNo, pageSize);
+        
+        //pagedResult = (Page<CrawlerData>)pagedResult.getSort(); Sorting is still pending..
+        
+        if(sortedbyId.hasContent())
+            return sortedbyId.getContent();
+        return pagedResult.getContent();
 
+        //return crawlerDataRepository.findAll();
+    }
+    
     @Override
     public void deleteCrawlerData(Long crawlerDataId) {
         crawlerDataRepository.deleteById(crawlerDataId);
@@ -52,13 +77,11 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
         CrawlerData updatedCrawlerData = crawlerDataRepository.save(existingCrawlerData);
         return updatedCrawlerData;
     }
-   
     
     @Override
     public CrawlerData setId(Long crawlerDataId) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setId'");
     }
-    
     
 }

@@ -2,7 +2,7 @@ package com.crudapplication.service;
 
 //import com.crudapplication.controller.CrawlerDataController;
 import com.crudapplication.entity.CrawlerData;
-  
+
 import java.util.List;
 
 public interface CrawlerDataService {
@@ -10,7 +10,9 @@ public interface CrawlerDataService {
 
     CrawlerData getCrawlerDataById(Long crawlerDataId);
 
-    List<CrawlerData> getAllCrawlerData();
+    //List<CrawlerData> getAllCrawlerData();
+
+    List<CrawlerData> getAllCrawlerData(Integer pageNo, Integer pageSize);
 
     CrawlerData updateCrawlerData(CrawlerData crawlerData);
 

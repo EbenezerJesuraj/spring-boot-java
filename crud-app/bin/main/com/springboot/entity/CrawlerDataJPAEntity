@@ -1,0 +1,21 @@
+@Entity
+public class CrawlerData {
+
+	@Id
+	@GeneratedValue
+	private UUID ID;
+
+    private UUID CrawlerID; 	// foreign key mapping
+
+	private String ProductURL;
+
+	private String Value1;
+
+    private String Value2;
+
+    private String Value3;
+
+    private String Value4;
+
+
+}

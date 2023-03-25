@@ -10,7 +10,9 @@ public interface CrawlerDefinitionService {
 
     CrawlerDefinition getCrawlerDefinitionById(Long crawlerDefinitionId);
 
-    List<CrawlerDefinition> getAllCrawlerDefinitions();
+    //List<CrawlerDefinition> getAllCrawlerDefinitions();
+
+    List<CrawlerDefinition> getAllCrawlerDefinitions(Integer pageNo, Integer pageSize);
 
     CrawlerDefinition updateCrawlerDefinition(CrawlerDefinition crawlerDefinition);
 

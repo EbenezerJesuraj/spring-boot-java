@@ -17,6 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "crud1")
+
 public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

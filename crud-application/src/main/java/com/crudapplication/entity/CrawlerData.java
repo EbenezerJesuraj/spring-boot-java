@@ -33,23 +33,5 @@ public class CrawlerData {
     private String Value3;
 	@Column(nullable = false)
     private String Value4;
-	public Long getId() {
-		return null;
-	}
-    public Object getFirstName() {
-        return null;
-    }
-    public Object getLastName() {
-        return null;
-    }
-    public Object getEmail() {
-        return null;
-    }
-    public void setFirstName(Object firstName) {
-    }
-    public void setLastName(Object lastName) {
-    }
-    public void setEmail(Object email) {
-    }
 	@Column(nullable = false)
 }
