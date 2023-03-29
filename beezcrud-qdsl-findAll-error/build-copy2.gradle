@@ -1,0 +1,48 @@
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'crud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+	
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.32'
+	compileOnly 'org.hibernate:hibernate-core'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'javax.persistence:javax.persistence-api'
+	implementation 'com.querydsl:querydsl-apt'
+	implementation 'com.querydsl:querydsl-jpa'
+	//implementation 'org.springframework.data:spring-data-jpa:jar'
+
+	//implementation 'jakarta.persistence:javax.persistence-api'
+}
+
+//apply from: 'gradle/querydsl.gradle'
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
