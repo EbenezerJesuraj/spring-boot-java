@@ -28,6 +28,8 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
         this.crawlerDataPagingRepository = crawlerDataPagingRepository;
     }
 
+    //private CrawlerDataPagingRepository crawlerDataPagingRepository;
+
     @Override
     public CrawlerData createCrawlerData(CrawlerData crawlerData) {
         System.out.println("Inside of creates CrawlerData");
@@ -64,6 +66,7 @@ public class CrawlerDataServiceImpl implements CrawlerDataService {
             return pagedResult.getContent();
         return null;
 
+        //return CrawlerDataPagingRepository.findAll();
     }
     
     @Override

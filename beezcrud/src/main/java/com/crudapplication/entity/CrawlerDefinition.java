@@ -14,23 +14,24 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name = "crawlerdata")
-public class CrawlerData {
+@Table(name = "CrawlerDefinition")
+public class CrawlerDefinition {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	@Column(nullable = false)
-    private Long crawlerId; 	// foreign key mapping
+	private String siteName;
 	@Column(nullable = false)
-	private String productURL;
+	private String fieldName1;
 	@Column(nullable = false)
-	private String value1;
+    private String fieldName2;
 	@Column(nullable = false)
-    private String value2;
+    private String fieldName3;
 	@Column(nullable = false)
-    private String value3;
-	@Column(nullable = false)
-    private String value4;
+    private String fieldName4;
 	
 }
+
+//@OnetoMany(fetch = FetchType.LAZY) // Since, one crawler definition can have many crawlerdata entries..
+//@JoinColumn(name = "crawlerId")

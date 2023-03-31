@@ -1,0 +1,40 @@
+ @GetMapping
+    public ResponseEntity<List<CrawlerData>> getAllCrawlerData(){
+        List<CrawlerData> crawlerData = crawlerDataService.getAllCrawlerData();
+        System.out.println("Inside of GetMapping");
+        return new ResponseEntity<>(crawlerData, HttpStatus.OK);
+    }
+    */
+    // Build Get All CrawlerData REST API
+    // http://localhost:8080/api/CrawlerDatas
+    /*@GetMapping
+   // @RequestMapping("/get")
+    //public ResponseEntity<List<CrawlerData>> getAllCrawlerData(@QuerydslPredicate(root = CrawlerData.class) java.util.function.Predicate<CrawlerData> predicate, @RequestParam(defaultValue = "0") Integer pageNo,
+    //@RequestParam(defaultValue = "10") Integer pageSize)
+    public ResponseEntity<List<CrawlerData>> getAllCrawlerData(@RequestParam(defaultValue = "0") Integer pageNo,
+    @RequestParam(defaultValue = "10") Integer pageSize)
+    //@RequestParam(defaultValue = "id") String sortBy)
+    {
+        
+        // The above request parameters must be added in the args section of getAllCrawlerData to allow paging support
+        System.out.println("Inside of GetMapping");
+        //log.debug("REST request to get a page of CrawlerData");
+        String sortBy = "id";
+        String sortDir = "ASC";
+
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+
+        
+        // create Pageable instance
+        Pageable pageable =  PageRequest.of(pageNo, pageSize, sort);
+    
+        //Page<CrawlerData> page = crawlerDataPagingRepository.findAll(pageable); // This line has issues
+        //Page<CrawlerData> page = crawlerDataPagingRepository.findAll(pageable); // This line has issues
+        List<CrawlerData> crawlerData = crawlerDataService.getAllCrawlerData(pageNo, pageSize);
+
+        //Object PaginationUtil;
+        //HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "crawlerdata");
+        //return new ResponseEntity<>(page.getContent(),HttpStatus.OK);
+        return new ResponseEntity<>(crawlerData, HttpStatus.OK);
+    }
+    */

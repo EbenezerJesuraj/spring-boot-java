@@ -27,7 +27,7 @@ repositories {
 dependencies {
 	// QueryDSL
     //compile "com.querydsl:querydsl-jpa:${queryDslVersion}"
-    //annotationProcessor("com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
+    annotationProcessor("com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
 
 	// Lombok
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
@@ -44,8 +44,8 @@ dependencies {
             "com.querydsl:querydsl-apt:4.2.1:jpa")
 	/* TEST */
     // Querydsl
-    //testCompile "com.querydsl:querydsl-jpa:${queryDslVersion}"
-    //testAnnotationProcessor("com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
+    testCompile "com.querydsl:querydsl-jpa:${queryDslVersion}"
+    testAnnotationProcessor("com.querydsl:querydsl-apt:${queryDslVersion}:jpa")
 
 	// Lombok
     testImplementation("org.projectlombok:lombok:${lombokVersion}")

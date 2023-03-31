@@ -1,5 +1,7 @@
 package com.crudapplication.entity;
 
+
+//import jakarta.persistence.*;
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -33,4 +35,5 @@ public class CrawlerData {
 	@Column(nullable = false)
     private String value4;
 	
+
 }

@@ -11,6 +11,8 @@ public interface CrawlerDataService {
 
     CrawlerData getCrawlerDataById(Long crawlerDataId);
 
+    //List<CrawlerData> getAllCrawlerData();
+
     List<CrawlerData> getAllCrawlerData(Predicate predicate, Integer pageNo, Integer pageSize);
     
     //List<CrawlerData> getAllCrawlerData(Integer pageNo, Integer pageSize);
@@ -18,6 +20,8 @@ public interface CrawlerDataService {
     CrawlerData updateCrawlerData(CrawlerData crawlerData);
 
     CrawlerData setId(Long crawlerDataId);
+
+   // CrawlerData getProductURL(String productURL);
 
     void deleteCrawlerData(Long crawlerDataId);
 }

@@ -7,6 +7,7 @@ buildscript {
     }
 }
 
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.10-SNAPSHOT'
@@ -20,6 +21,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 //queryDslVersion = '4.1.3'
+
 
 configurations {
 	compileOnly {
@@ -42,14 +44,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'mysql:mysql-connector-java:8.0.32'
 	compileOnly 'org.hibernate:hibernate-core' 
-	compileOnly 'org.hsqldb:hsqldb:2.7.1'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	annotationProcessor 'javax.persistence:javax.persistence-api'
-   
+    //compileOnly 'com.querydsl:querydsl-jpa'
+    // annotationProcessor (
+    //     'com.querydsl:querydsl-apt:${queryDslVersion}:jpa',
+    //     'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final',
+    //     'javax.annotation:javax.annotation-api:1.3.2',
+	// 	"org.projectlombok:lombok"
+    // )
 }
 
 
@@ -58,3 +65,4 @@ tasks.named('test') {
 }
 
 apply from: 'gradle/wrapper/querydsl.gradle'
+   
