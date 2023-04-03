@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.ewerk.gradle.plugins:querydsl-plugin:1.0.9"
+    }
+}
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'crud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+//queryDslVersion = '4.1.3'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+
+repositories {
+	mavenCentral()
+	jcenter()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://repo.maven.apache.org/maven2/'}
+}
+
+//def queryDslVersion = '4.1.3'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.32'
+	compileOnly 'org.hibernate:hibernate-core' 
+	compileOnly 'org.hsqldb:hsqldb:2.7.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor 'javax.persistence:javax.persistence-api'
+   
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+apply from: 'gradle/wrapper/querydsl.gradle'
