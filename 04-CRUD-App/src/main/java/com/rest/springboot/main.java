@@ -12,12 +12,10 @@ public class main {
      * @param args
      */
     public static void main(String[] args) {
-        SpringApplication.run(main.class, args);
-<<<<<<< Updated upstream
+
         SpringApplication.run(REST.class, args); //Linking Rest-Service to the Test Application runner..
-        
-=======
+
         //SpringApplication.run(REST.class, args); //Linking Rest-Service to the Test Application runner..
->>>>>>> Stashed changes
+
     }
 }

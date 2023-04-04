@@ -35,7 +35,6 @@ public class UserController {
     
       
     // build create User REST API
-    //@RequestMapping("/post")
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
         System.out.println("Inside of PostMapping");
@@ -45,21 +44,18 @@ public class UserController {
 
     // build get user by id REST API
     // http://localhost:8080/api/users/1
-    //@RequestMapping("/getid")
     @GetMapping("{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long userId){
         User user = userService.getUserById(userId);
-        System.out.println("Inside of Get-id Mapping");
+        System.out.println("Inside of GetMapping");
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     // Build Get All Users REST API
     // http://localhost:8080/api/users
-    //@RequestMapping("/get")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> users = userService.getAllUsers();
-        System.out.println("Inside of GetMapping");
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
@@ -70,7 +66,6 @@ public class UserController {
                                            @RequestBody User user){
         
         user.setId(userId);
-        System.out.println("Inside of updateMapping");
         User updatedUser = userService.updateUser(user);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
     }
@@ -79,7 +74,6 @@ public class UserController {
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteUser(@PathVariable("id") Long userId){
         userService.deleteUser(userId);
-        System.out.println("Inside of deleteMapping");
         return new ResponseEntity<>("User successfully deleted!", HttpStatus.OK);
     }
 }

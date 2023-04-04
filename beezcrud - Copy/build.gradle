@@ -1,0 +1,103 @@
+
+
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+/*
+test {
+	useJUnitPlatform()
+}
+
+integrationTest {
+	useJUnitPlatform()
+}
+
+coveralls {
+	jacocoReportPath 'build/reports/jacoco/test/jacocoTestReport.xml'
+}
+
+checkstyle {
+	toolVersion '8.25'
+	configFile file('gradle/checkstyle/oracle_checks.xml')
+}
+*/
+
+group = 'crud'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+    jcenter()
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.32'
+	compileOnly 'org.hibernate:hibernate-core'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'javax.persistence:javax.persistence-api'
+	implementation 'com.querydsl:querydsl-jpa:5.0.0'
+	//classpath 'gradle.plugin.com.ewerk.gradle.plugins:querydsl-plugin:1.0.9'
+	//implementation 'jakarta.persistence:javax.persistence-api'
+	
+	/*
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+
+	annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
+	implementation "org.mapstruct:mapstruct:$mapstructVersion"
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	*/
+
+	annotationProcessor(
+		"com.querydsl:querydsl-apt:5.0.0:jpa",
+		'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final',
+		'javax.annotation:javax.annotation-api:1.3.2'
+	)
+	implementation "com.querydsl:querydsl-core"
+	implementation "com.querydsl:querydsl-jpa"
+
+	/*
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.liquibase:liquibase-core'
+
+	implementation "io.springfox:springfox-swagger2:$swaggerVersion"
+	implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
+
+	testImplementation "org.mockito:mockito-core:$mockitoVersion"
+	testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
+	testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+	itestImplementation 'org.springframework.boot:spring-boot-starter-test'
+	itestImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+	itestRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+	itestRuntimeOnly 'com.h2database:h2:1.0.60'
+	*/
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
